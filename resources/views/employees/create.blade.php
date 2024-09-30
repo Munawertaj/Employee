@@ -36,7 +36,7 @@
         </div>
 
         <div class="mb-2">
-            <label for="email" class="form-label">Email (optional)</label>
+            <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" name="email" value="{{ old('email') }}">
             <div>{{ $errors->first('email') }}</div>
         </div>
