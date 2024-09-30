@@ -16,10 +16,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           
-          <form class="d-flex" role="search">
+          <!-- <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          </form> -->
+
+            <form class="d-flex ms-auto" role="search" action="{{ route('employees.index') }}" method="GET">
+                <input class="form-control me-2" type="search" name="search" placeholder="Search by name or job title" aria-label="Search" style="width: 450px;" value="{{ request('search') }}">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+
+
         </div>
       </div>
     </nav>

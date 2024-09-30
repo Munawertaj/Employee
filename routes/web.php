@@ -16,3 +16,5 @@ Route::get('/employees/{id}/edit', [EmployeeController::class, 'edit'])->name('e
 Route::put('/employees/{id}', [EmployeeController::class, 'update'])->name('employees.update');
 
 Route::delete('/employees/{id}/', [EmployeeController::class, 'destroy'])->name('employees.destroy');
+
+Route::get('/employees/search', [EmployeeController::class, 'index'])->name('employees.search');

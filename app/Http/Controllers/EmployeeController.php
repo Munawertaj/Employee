@@ -7,10 +7,26 @@ use App\Models\Employee;
 
 class EmployeeController extends Controller
 {
-    public function index()
+    // public function index()
+    // {
+    //     // Fetch paginated employee records, 5 per page
+    //     $employees = Employee::paginate(5);
+
+    //     // Return the view with the employee data
+    //     return view('employees.index')->with('employees', $employees);
+    // }
+
+     public function index(Request $request)
     {
-        // Fetch paginated employee records, 5 per page
-        $employees = Employee::paginate(5);
+        // Get search query from the request
+        $search = $request->input('search');
+
+        // Fetch paginated employee records, 10 per page
+        // If a search query is provided, filter by name or job_title
+        $employees = Employee::when($search, function ($query, $search) {
+            return $query->where('name', 'LIKE', "%{$search}%")
+                         ->orWhere('job_title', 'LIKE', "%{$search}%");
+        })->paginate(5);
 
         // Return the view with the employee data
         return view('employees.index')->with('employees', $employees);

@@ -7,6 +7,10 @@
         <a class="btn btn-primary" href="{{ route('employees.create') }}">Add Employee</a>
     </p>
 
+    @if(request('search'))
+        <h5>Search Results for: {{ request('search') }}</h5>
+    @endif
+
     <table class="table table-striped table-bordered">
         <thead>
             <tr>
