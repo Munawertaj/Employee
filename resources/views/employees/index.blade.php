@@ -18,6 +18,7 @@
                 <th>Email</th>
                 <th>Mobile No</th>
                 <th>Address</th>
+                <th> Actions </th>
             </tr>
         </thead>
         <tbody>
@@ -31,6 +32,12 @@
                     <td>{{ $employee->email }}</td>
                     <td>{{ $employee->mobile_no }}</td>
                     <td>{{ $employee->address }}</td>
+
+                    <td>
+                    <a class="btn btn-warning me-2" href="{{ route('employees.edit', $employee->id) }}">Edit</a>
+                    
+                    
+                </td>
                 </tr>
             @endforeach
         </tbody>
