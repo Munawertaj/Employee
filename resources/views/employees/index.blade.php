@@ -3,6 +3,10 @@
 @section('page-content')
     <h2>Employee List</h2>
 
+    <p class="text-end">
+        <a class="btn btn-primary" href="{{ route('employees.create') }}">Add Employee</a>
+    </p>
+
     <table class="table table-striped table-bordered">
         <thead>
             <tr>
