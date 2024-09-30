@@ -36,7 +36,11 @@
                     <td>
                     <a class="btn btn-warning me-2" href="{{ route('employees.edit', $employee->id) }}">Edit</a>
                     
-                    
+                    <form method="post" action="{{ route('employees.destroy', $employee->id) }}" onsubmit="return confirm('Are you sure you want to delete this employee?')" class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                        <input class="btn btn-danger" type="submit" value="Delete">
+                    </form>
                 </td>
                 </tr>
             @endforeach
